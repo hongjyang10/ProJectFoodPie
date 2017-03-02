@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        style="@style/foodwikibrand_ll"
+        android:layout_width="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_query_back"
+            style="@style/iv_query_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_back_dark_center" />
+
+        <EditText
+            android:id="@+id/et_query"
+            style="@style/et_query"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_query_back"
+            android:background="@null" />
+
+        <ImageView
+            android:id="@+id/iv_query_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:src="@mipmap/ic_home_search" />
+    </RelativeLayout>
+
+    <View
+        style="@style/roameat_view"
+        android:layout_width="match_parent"
+        android:background="@color/gray" />
+
+    <FrameLayout
+        android:id="@+id/fl_query"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -1,18 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.lanou.dllo.myfoodpie.activity.MainActivity">
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_foodwiki"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <RelativeLayout
+                style="@style/height_hundredeighy"
+                android:layout_width="match_parent"
+                android:background="@mipmap/ic_foodwiki">
+
+                <ImageView
+                    style="@style/iv_food_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/ic_home_logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/foodwiki_query"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    style="@style/food_head_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/tv_food_search"
+                        style="@style/tv_food_head"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@mipmap/ic_home_search"
+                        android:text="@string/foodwiki_search"
+                        android:textColor="@color/yellow" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                style="@style/food_send_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/selector_wiki_analyis" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/foodwiki_analyis" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/selector_wiki_compare" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/foodwiki_compare" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/selector_wiki_scan" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/foodwiki_scan" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                style="@style/foodwiki_relativeLaout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_food_sort"
+                    style="@style/tv_food_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:text="@string/sort" />
+
+                <ImageView
+                    android:id="@+id/iv_food_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_food_sort"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/qqtwo" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_foodwiki_sort"
+                    style="@style/rv_foodwiki_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_food_sort"
+                    android:background="@color/white"></android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/foodwiki_relativeLaout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_food_brand"
+                    style="@style/tv_food_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:text="@string/brand" />
+
+                <ImageView
+                    android:id="@+id/iv_food_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_food_brand"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/qqtwo" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_foodwiki_brand"
+                    style="@style/rv_foodwiki_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_food_brand"
+                    android:background="@color/white"></android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/foodwiki_relativeLaout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_food_chain"
+                    style="@style/tv_food_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:text="@string/chain" />
+
+                <ImageView
+                    android:id="@+id/iv_food_chain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_food_chain"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/qqtwo" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_foodwiki_chain"
+                    style="@style/rv_foodwiki_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_food_chain"
+                    android:background="@color/white"></android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -6,4 +6,8 @@
     <color name="text_color">#000000</color>
     <color name="text_color_checked">#e90b25</color>
     <color name="white">#FFFFFF</color>
+    <color name="gray">#b4b0b0</color>
+    <color name="yellow">#f1843b</color>
+    <color name="upload_btn">#f88</color>
+    <color name="btn_set_nologin">#f88</color>
 </resources>

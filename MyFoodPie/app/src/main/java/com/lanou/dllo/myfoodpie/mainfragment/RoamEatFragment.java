@@ -1,15 +1,16 @@
 package com.lanou.dllo.myfoodpie.mainfragment;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
 import com.lanou.dllo.myfoodpie.R;
 import com.lanou.dllo.myfoodpie.adapter.RoamEatFragmentAdapter;
-import com.lanou.dllo.myfoodpie.roameatfragment.DelicacyRoamEatFragment;
 import com.lanou.dllo.myfoodpie.roameatfragment.EvaluatingRoamEatFragment;
 import com.lanou.dllo.myfoodpie.roameatfragment.HomeRoamEatFragment;
-import com.lanou.dllo.myfoodpie.roameatfragment.KonwledgeRoamEatFragment;
+import com.lanou.dllo.myfoodpie.roameatfragment.EndRoamEatFragment;
+import com.lanou.dllo.myfoodpie.url.Url;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +49,7 @@ public class RoamEatFragment extends BaseFragment {
     protected void initView() {
         viewPager = bindView(R.id.vp_roameat);
         tabLayout = bindView(R.id.tab_roameat);
-        adapter = new RoamEatFragmentAdapter(getActivity().getSupportFragmentManager());
+        adapter = new RoamEatFragmentAdapter(getChildFragmentManager());
         viewPager.setAdapter(adapter);
     }
 
@@ -57,8 +58,16 @@ public class RoamEatFragment extends BaseFragment {
         fragments = new ArrayList<>();
         fragments.add(new HomeRoamEatFragment());
         fragments.add(new EvaluatingRoamEatFragment());
-        fragments.add(new KonwledgeRoamEatFragment());
-        fragments.add(new DelicacyRoamEatFragment());
+        Fragment knowFragment = new EndRoamEatFragment();
+        Bundle bundleKnow = new Bundle();
+        bundleKnow.putString("url", Url.ROAMEATKNOW);
+        knowFragment.setArguments(bundleKnow);
+        fragments.add(knowFragment);
+        Fragment deliFragment = new EndRoamEatFragment();
+        Bundle bundleDeli = new Bundle();
+        bundleDeli.putString("url", Url.ROAMEATDELI);
+        deliFragment.setArguments(bundleDeli);
+        fragments.add(deliFragment);
         adapter.setFragments(fragments);
         adapter.setContext(getContext());
     }

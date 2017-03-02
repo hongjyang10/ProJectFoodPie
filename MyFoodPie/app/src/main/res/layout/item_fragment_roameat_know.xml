@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/know_linearLayout"
+        android:layout_width="match_parent"></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_item_know_title"
+            style="@style/tv_item_know_title"
+            android:ellipsize="end"
+            android:maxLines="2" />
+
+
+        <TextView
+            android:id="@+id/tv_item_know_author"
+            style="@style/tv_item_know_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_item_know_title"
+            android:layout_below="@id/tv_item_know_title" />
+
+        <TextView
+            android:id="@+id/tv_item_know_number"
+            style="@style/tv_item_know_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/tv_item_know_title"
+            android:layout_below="@id/tv_item_know_title"
+            android:drawableLeft="@mipmap/ic_watch" />
+
+
+        <ImageView
+            android:id="@+id/iv_item_konw_photo"
+            style="@style/iv_item_konw_photo"
+            android:layout_alignBottom="@id/tv_item_know_author"
+            android:layout_alignTop="@id/tv_item_know_title"
+            android:layout_toRightOf="@id/tv_item_know_title" />
+    </RelativeLayout>
+</LinearLayout>

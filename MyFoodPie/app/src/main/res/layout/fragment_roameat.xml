@@ -6,8 +6,8 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        style="@style/roanmeat_relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:background="@color/white">
 
         <TextView
@@ -19,18 +19,28 @@
 
         <ImageView
             android:id="@+id/iv_creame_roameat"
+            style="@style/iv_creame_roameat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:src="@mipmap/ic_home_camera" />
     </RelativeLayout>
+
+    <View
+        style="@style/roameat_view"
+        android:layout_width="match_parent"
+        android:background="@color/gray"
+        />
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_roameat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        app:tabSelectedTextColor="@color/text_color_checked">
+        app:tabSelectedTextColor="@color/text_color_checked"
+
+        >
 
     </android.support.design.widget.TabLayout>
 

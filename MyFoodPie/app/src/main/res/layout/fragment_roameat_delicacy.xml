@@ -4,8 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/lv_rm_delicacy"
-        layout="@layout/include_listview" />
+  <ListView
+      android:id="@+id/lv_rm_delicacy"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+  </ListView>
 
 </LinearLayout>

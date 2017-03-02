@@ -1,7 +1,10 @@
-package com.lanou.dllo.myfoodpie.roameatfragment;
+package com.lanou.dllo.myfoodpie.adapter;
 
-import com.lanou.dllo.myfoodpie.R;
-import com.lanou.dllo.myfoodpie.mainfragment.BaseFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+
+import java.util.List;
 
 /*
          |              |
@@ -22,24 +25,24 @@ import com.lanou.dllo.myfoodpie.mainfragment.BaseFragment;
              |       |
              |       |
 */
-public class DelicacyRoamEatFragment extends BaseFragment {
-    @Override
-    protected int setLayout() {
-        return R.layout.fragment_roameat_delicacy;
+public class QueryFragmentAdapter extends FragmentPagerAdapter {
+    private List<Fragment> fragments;
+
+    public QueryFragmentAdapter(FragmentManager fm) {
+        super(fm);
+    }
+
+    public void setFragments(List<Fragment> fragments) {
+        this.fragments = fragments;
     }
 
     @Override
-    protected void initView() {
-
+    public Fragment getItem(int position) {
+        return fragments.get(position);
     }
 
     @Override
-    protected void initData() {
-
-    }
-
-    @Override
-    protected void initEvent() {
-
+    public int getCount() {
+        return fragments != null ? fragments.size() : 0;
     }
 }

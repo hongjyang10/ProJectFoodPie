@@ -4,12 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.view.LayoutInflater;
-import android.view.View;
 
-import com.lanou.dllo.myfoodpie.R;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -34,15 +29,15 @@ import java.util.List;
 public class RoamEatFragmentAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragments;
     private Context context;
-    private String roamEatTitle[] = new String[]{"首页", "评测", "知识", "美食"};
+    private String string[] = new String[]{"首页", "评测", "知识", "美食"};
+
+    public List<Fragment> getFragments() {
+        return fragments;
+    }
 
     public void setFragments(List<Fragment> fragments) {
         this.fragments = fragments;
         notifyDataSetChanged();
-    }
-
-    public List<Fragment> getFragments() {
-        return fragments;
     }
 
     public Context getContext() {
@@ -67,7 +62,8 @@ public class RoamEatFragmentAdapter extends FragmentPagerAdapter {
         return fragments != null ? fragments.size() : 0;
     }
 
-    public String getTitleView(int index) {
-        return roamEatTitle[index];
+    public String getTitleView(int position) {
+        return string[position];
     }
+
 }

@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -15,5 +15,309 @@
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@drawable/selector_radiobutton_text</item>
+    </style>
+
+    <style name="height_hundredeighy">
+        <item name="android:layout_height">180dp</item>
+    </style>
+
+    <style name="tv_padding_myself">
+        <item name="android:paddingTop">15dp</item>
+    </style>
+
+    <style name="my_login">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+    <style name="lv_myself">
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="roameat_view">
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="roanmeat_relativeLayout">
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="include_relativeLayout">
+        <item name="android:layout_height">60dp</item>
+    </style>
+
+    <style name="foodwiki_relativeLaout">
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="tv_food_sort">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="rv_foodwiki_sort">
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="iv_food_head">
+        <item name="android:paddingTop">5dp</item>
+    </style>
+
+    <style name="food_head_linearLayout">
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+
+    <style name="tv_food_head">
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="food_send_linearLayout">
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="iv_item_foodwiki">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="tv_item_foodwiki">
+        <item name="android:layout_marginBottom">3dp</item>
+    </style>
+
+    <style name="myself_relativeLayout">
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="tv_item_myself_text">
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="tv_top_ten">
+        <item name="android:paddingTop">10dp</item>
+    </style>
+
+    <style name="tv_bottom_fiveteen">
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
+    <style name="iv_creame_roameat">
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+    <style name="iv_item_eva_photo">
+        <item name="android:layout_height">190dp</item>
+    </style>
+
+    <style name="know_linearLayout">
+        <item name="android:layout_height">10dp</item>
+    </style>
+
+    <style name="tv_item_know_title">
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="tv_item_know_author">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="tv_item_know_number">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="iv_item_konw_photo">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="tv_item_know_dis_title">
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="ll_konw_dis">
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="dis_left_threedp">
+        <item name="android:layout_marginLeft">3dp</item>
+    </style>
+
+    <style name="dis_right_threedp">
+        <item name="android:layout_marginRight">3dp</item>
+    </style>
+
+    <style name="dis_threedp">
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:layout_marginLeft">3dp</item>
+    </style>
+
+    <style name="tv_know_dis_author">
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+    <style name="web_ll_height">
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="iv_web_back">
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="tv_web_back">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:text">@string/web_back</item>
+    </style>
+
+    <style name="tv_roameat_home_back">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:text">@string/roameathome</item>
+    </style>
+
+    <style name="web_paddingleft">
+        <item name="android:paddingLeft">50dp</item>
+    </style>
+
+    <style name="tv_web_home_back">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:text">@string/web_home_back</item>
+    </style>
+
+    <style name="collect_tv_login_back">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:text">@string/collect_tv_login_back</item>
+    </style>
+
+    <style name="order_tv_login_back">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:text">@string/order_tv_login_back</item>
+    </style>
+
+    <style name="photo_tv_login_back">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:text">@string/photo_tv_login_back</item>
+    </style>
+
+    <style name="upload_tv_login_back">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:text">@string/upload_tv_login_back</item>
+    </style>
+
+    <style name="upload_view">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="uoload_rl">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="upload_btn">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@color/upload_btn</item>
+        <item name="android:text">@string/upload_btn</item>
+    </style>
+
+    <style name="foodwikibrand_ll">
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="tv_foodwikibrand_title">
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="tv_foodwikibrand_text">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:text">@string/tv_foodwikibrand_text</item>
+    </style>
+
+    <style name="login_tv_login_back">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:text">@string/login_tv_login_back</item>
+    </style>
+
+    <style name="iv_query_back">
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="et_query">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:hint">@string/et_query</item>
+    </style>
+
+    <style name="iv_query_activity">
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="activity_roameathome_rl">
+        <item name="android:layout_height">70dp</item>
+    </style>
+
+    <style name="cir_activity_rm_home">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="tv_activity_rm_home_name">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <style name="tv_activity_rm_home_time">
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="set_tv_login_back">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:text">@string/set_tv_login_back</item>
+    </style>
+
+    <style name="set_rl">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="btn_set_nologin">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:text">@string/btn_set_nologin</item>
+        <item name="android:background">@color/btn_set_nologin</item>
+    </style>
+    <style name="tv_set_one">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:text">@string/tv_set_one</item>
     </style>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="60dp">
+    style="@style/include_relativeLayout"
+    android:layout_width="match_parent">
 
     <RadioGroup
         android:id="@+id/rg_main"
@@ -14,19 +14,19 @@
             android:id="@+id/btn_foodwiki"
             style="@style/radiobutton_main"
             android:checked="true"
-            android:drawableTop="@drawable/selecter_foodwiki"
+            android:drawableTop="@drawable/selector_foodwiki"
             android:text="@string/radio_foodwiki" />
 
         <RadioButton
             android:id="@+id/btn_roameat"
             style="@style/radiobutton_main"
-            android:drawableTop="@drawable/selecter_roameat"
+            android:drawableTop="@drawable/selector_roameat"
             android:text="@string/radio_roameat" />
 
         <RadioButton
             android:id="@+id/btn_myself"
             style="@style/radiobutton_main"
-            android:drawableTop="@drawable/selecter_roameat"
+            android:drawableTop="@drawable/selector_roameat"
             android:text="@string/radio_myself" />
 
     </RadioGroup>

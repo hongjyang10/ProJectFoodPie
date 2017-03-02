@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/know_linearLayout"
+        android:layout_width="match_parent"></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_item_know_dis_title"
+            style="@style/tv_item_know_dis_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/ll_konw_dis"
+            style="@style/ll_konw_dis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_know_dis_title"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_know_dis_photo_one"
+                style="@style/dis_right_threedp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_know_dis_photo_two"
+                style="@style/dis_threedp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_know_dis_photo_three"
+                style="@style/dis_left_threedp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_know_dis_author"
+            style="@style/tv_know_dis_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_konw_dis" />
+
+        <TextView
+            android:id="@+id/tv_know_dis_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_konw_dis"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@mipmap/ic_watch" />
+    </RelativeLayout>
+</LinearLayout>

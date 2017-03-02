@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <ImageView
+        android:id="@+id/iv_item_eva_photo"
+        style="@style/iv_item_eva_photo"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/tv_item_eva_title"
+        style="@style/tv_top_ten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_item_eva_text"
+        style="@style/tv_top_ten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_item_eva_number"
+        style="@style/tv_bottom_fiveteen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:drawableLeft="@mipmap/ic_read"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

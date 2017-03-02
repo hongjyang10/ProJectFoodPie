@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleHead">
+        <attr name="isCircle" format="boolean" />
+        <attr name="myName" format="boolean" />
+    </declare-styleable>
+</resources>

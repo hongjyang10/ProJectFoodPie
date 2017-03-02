@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lanou.dllo.myfoodpie">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.WebViewActivity" />
+        <activity android:name=".activity.PublicActivity" />
+        <activity android:name=".activity.QueryActivity" />
+        <activity android:name=".activity.FoodWiKiBrandActivity"/>
+        <activity android:name=".activity.RoamEaTHomeActivity"/>
     </application>
 
 </manifest>
