@@ -12,12 +12,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
             android:text="营养素排序" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
             android:text="推荐食物"
             android:textColor="@color/yellow" />
     </RelativeLayout>
@@ -28,6 +30,7 @@
         android:background="@color/gray" />
 
     <ListView
+        android:id="@+id/lv_fragment_show"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 </LinearLayout>

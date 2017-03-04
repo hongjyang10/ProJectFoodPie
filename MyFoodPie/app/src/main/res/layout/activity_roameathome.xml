@@ -48,7 +48,7 @@
                 android:background="@color/white"
                 android:orientation="horizontal">
 
-                <com.lanou.dllo.myfoodpie.custom.Circle
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/cir_activity_rm_home"
                     style="@style/cir_activity_rm_home"
                     android:layout_width="40dp"

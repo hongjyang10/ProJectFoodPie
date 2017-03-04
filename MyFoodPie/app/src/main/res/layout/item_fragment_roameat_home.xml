@@ -50,7 +50,7 @@
             android:layout_marginRight="5dp"
             android:background="@color/gray" />
 
-        <com.lanou.dllo.myfoodpie.custom.Circle
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_item_home_head"
             android:layout_width="20dp"
             android:layout_height="20dp"

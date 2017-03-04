@@ -86,11 +86,13 @@ public class FoodWiKiAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 }else {
                     value = position+1;
                 }
+
                 String url = "http://food.boohee.com/fb/v1/foods?kind=" +
                         "" + sortType[type] + "&value=" + value + "&order_by=1&page=1&" +
                         "order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_versio" +
                         "n=5.1&phone_model=M578CA&channel=meizu%20";
                 intent.putExtra("sort", url);
+//                page++;
                 context.startActivity(intent);
 
             }

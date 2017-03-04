@@ -1,9 +1,5 @@
 package com.lanou.dllo.myfoodpie.datapotting;
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.Generated;
-
 /*
          |              |
          | \            | \
@@ -23,6 +19,11 @@ import org.greenrobot.greendao.annotation.Generated;
              |       |
              |       |
 */
+
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Generated;
+
 @Entity
 public class QueryData {
     @Id
@@ -55,5 +56,4 @@ public class QueryData {
     public void setText(String text) {
         this.text = text;
     }
-
 }
