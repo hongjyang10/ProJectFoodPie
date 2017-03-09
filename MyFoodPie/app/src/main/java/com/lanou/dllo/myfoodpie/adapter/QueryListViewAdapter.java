@@ -1,6 +1,7 @@
 package com.lanou.dllo.myfoodpie.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -46,6 +47,10 @@ public class QueryListViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+        if(text!=null){
+
+            Log.e(TAG, "getCount: "+text.size());
+        }
         return text != null ? text.size() : 0;
     }
 
@@ -62,7 +67,9 @@ public class QueryListViewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         BaseViewHolder holder = BaseViewHolder.createListViewHolder(convertView, parent, R.layout.item_fragment_query);
-        holder.setText(R.id.tv_item_query, text.get(position).getText());
+        String str = text.get(position).getText();
+        Log.e(TAG, "getView: "+str);
+        holder.setText(R.id.tv_item_query, str);
         return holder.getmView();
     }
 }

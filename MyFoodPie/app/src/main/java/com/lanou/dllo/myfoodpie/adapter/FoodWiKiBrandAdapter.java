@@ -64,6 +64,15 @@ public class FoodWiKiBrandAdapter extends BaseAdapter {
         holder = BaseViewHolder.createListViewHolder(convertView, parent, R.layout.item_foodwikibrand);
         holder.setText(R.id.tv_item_food_brand, foodsBeanList.get(position).getName());
         holder.setImage(R.id.cir_item_food_brand, foodsBeanList.get(position).getThumb_image_url());
+        holder.setText(R.id.tv_item_food_number,foodsBeanList.get(position).getCalory());
+        holder.setText(R.id.tv_item_food_hundred,foodsBeanList.get(position).getWeight());
+        if (Integer.parseInt(foodsBeanList.get(position).getCalory())<368){
+            holder.setImage(R.id.iv_item_food_brand,R.mipmap.ic_food_light_green);
+        }else  if (Integer.parseInt(foodsBeanList.get(position).getCalory())<450){
+            holder.setImage(R.id.iv_item_food_brand,R.mipmap.ic_food_light_yellow);
+        }else  if (Integer.parseInt(foodsBeanList.get(position).getCalory())>450){
+            holder.setImage(R.id.iv_item_food_brand,R.mipmap.ic_food_light_red);
+        }
         return holder.getmView();
     }
 

@@ -84,7 +84,28 @@ public class EvaluatingRoamEatFragment extends BaseFragment {
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> pullToRefreshBase) {
+                handler = new Handler(new Handler.Callback() {
+                    @Override
+                    public boolean handleMessage(Message msg) {
+                        if (msg.what==0){
+                            listView.onRefreshComplete();
+                            Toast.makeText(getContext(), "加载完成", Toast.LENGTH_SHORT).show();
+                        }
+                        return false;
+                    }
+                });
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(3000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        handler.sendEmptyMessage(0);
+                    }
 
+                }).start();
             }
 
             @Override

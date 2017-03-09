@@ -1,6 +1,11 @@
 package com.lanou.dllo.myfoodpie.mainfragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -10,6 +15,7 @@ import android.widget.TextView;
 import com.lanou.dllo.myfoodpie.R;
 import com.lanou.dllo.myfoodpie.activity.PublicActivity;
 import com.lanou.dllo.myfoodpie.adapter.MyselfAdapter;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,6 +48,9 @@ public class MyselfFragment extends BaseFragment implements View.OnClickListener
     private TextView loginTv;
     private ImageView setIv;
     private Intent intent;
+    private static final String TAG = "MyselfFragment";
+    private ImageView headImg;
+    private RefreshReceiver receiver;
 
     @Override
     protected int setLayout() {
@@ -53,6 +62,10 @@ public class MyselfFragment extends BaseFragment implements View.OnClickListener
         listView = bindView(R.id.lv_myself);
         loginTv = bindView(R.id.tv_myself_login);
         setIv = bindView(R.id.iv_myself_set);
+        headImg = bindView(R.id.iv_my_head);
+        receiver = new RefreshReceiver();
+        IntentFilter filter = new IntentFilter("START");
+        getContext().registerReceiver(receiver, filter);
     }
 
     @Override
@@ -78,6 +91,19 @@ public class MyselfFragment extends BaseFragment implements View.OnClickListener
         adapter.setList(list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+        SharedPreferences sp = getContext().getSharedPreferences("register", Context.MODE_PRIVATE);
+        String headurl = sp.getString("headurl", null);
+        String nickname = sp.getString("nickname", null);
+
+
+        if(register()){
+            loginTv.setText(nickname);
+            Picasso.with(getContext()).load(headurl).into(headImg);
+        }else{
+            loginTv.setText("点击登录");
+            headImg.setImageResource(R.mipmap.ic_analyse_default);
+        }
+
     }
 
     @Override
@@ -93,12 +119,35 @@ public class MyselfFragment extends BaseFragment implements View.OnClickListener
                 intent = new Intent(getActivity(), PublicActivity.class);
                 intent.putExtra("xml", R.layout.activity_login);
                 startActivity(intent);
+
                 break;
             case R.id.iv_myself_set:
-                intent = new Intent(getActivity(), PublicActivity.class);
-                intent.putExtra("xml", R.layout.activity_set);
-                startActivity(intent);
+                if (register()) {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activity_set);
+                    startActivity(intent);
+                } else {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activity_login);
+                    startActivity(intent);
+                }
+
                 break;
+        }
+    }
+
+    private boolean register() {
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("register", Context.MODE_PRIVATE);
+
+        return sharedPreferences.getBoolean("register", false);
+    }
+
+    class RefreshReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.e(TAG, "onReceive: ");
+            initData();
         }
     }
 
@@ -106,25 +155,55 @@ public class MyselfFragment extends BaseFragment implements View.OnClickListener
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                intent = new Intent(getActivity(), PublicActivity.class);
-                intent.putExtra("xml", R.layout.activitv_photo);
-                startActivity(intent);
+                if (register()) {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activitv_photo);
+                    startActivity(intent);
+                } else {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activity_login);
+                    startActivity(intent);
+                }
                 break;
             case 1:
-                intent = new Intent(getActivity(), PublicActivity.class);
-                intent.putExtra("xml", R.layout.activitv_collect);
-                startActivity(intent);
+                if (register()) {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activitv_collect);
+                    startActivity(intent);
+                } else {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activity_login);
+                    startActivity(intent);
+                }
                 break;
             case 2:
-                intent = new Intent(getActivity(), PublicActivity.class);
-                intent.putExtra("xml", R.layout.activitv_upload);
-                startActivity(intent);
+                if (register()) {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activitv_upload);
+                    startActivity(intent);
+                } else {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activity_login);
+                    startActivity(intent);
+                }
                 break;
             case 3:
-                intent = new Intent(getActivity(), PublicActivity.class);
-                intent.putExtra("xml", R.layout.activitv_order);
-                startActivity(intent);
+                if (register()) {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activitv_order);
+                    startActivity(intent);
+                } else {
+                    intent = new Intent(getActivity(), PublicActivity.class);
+                    intent.putExtra("xml", R.layout.activity_login);
+                    startActivity(intent);
+                }
                 break;
         }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        getContext().unregisterReceiver(receiver);
     }
 }

@@ -1,10 +1,15 @@
 package com.lanou.dllo.myfoodpie.activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.ActionBar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +50,8 @@ public class FoodWiKiBrandActivity extends BaseActivity implements View.OnClickL
     private PullToRefreshListView listView;
     private Intent intent;
     private Handler handler;
+    private TextView upDownTv;
+    private PopupWindow popupWindow;
     private TextView titleTv;
     private String sortTitle[] = new String[]{"主食类", "肉蛋类", "大豆及制品", "蔬菜菌藻类", "水果类", "奶类", "油脂类", "坚果类", "调味品", "饮料类", "零食,点心..", "其他"};
     private String brandTitle[] = new String[]{"薄荷", "未得鲜", "雀巢", "光明", "伊利", "蒙牛", "三全", "永和", "南方", "康师傅", "思念", "新农哥"};
@@ -60,6 +67,7 @@ public class FoodWiKiBrandActivity extends BaseActivity implements View.OnClickL
     protected void initView() {
         listView = bindView(R.id.lv_foodwiki_brand);
         titleTv = bindView(R.id.tv_foodwikibrand_title);
+        upDownTv = bindView(R.id.tv_activity_updowm);
     }
 
     @Override
@@ -100,60 +108,64 @@ public class FoodWiKiBrandActivity extends BaseActivity implements View.OnClickL
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> pullToRefreshBase) {
+                handler = new Handler(new Handler.Callback() {
+                    @Override
+                    public boolean handleMessage(Message msg) {
+                        if (msg.what==0){
+                            listView.onRefreshComplete();
+                            Toast.makeText(getBaseContext(), "加载完成", Toast.LENGTH_SHORT).show();
+                        }
+                        return false;
+                    }
+                });
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(3000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        handler.sendEmptyMessage(0);
+                    }
 
+                }).start();
             }
 
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> pullToRefreshBase) {
 
                 handler = new Handler(new Handler.Callback() {
-                    String url;
 
                     @Override
                     public boolean handleMessage(Message msg) {
 
                         if (msg.what == 0) {
-                            int page = 1;
-                            page++;
+////                            int page = 1;
+////                            page++;
+////
+////                            if (sortUrl == "http://food.boohee.com/fb/v1/foods?kind=group&value=1&order_by=1&page=1&order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_version=5.1&phone_model=M578CA&channel=meizu%20") {
+////                                url = "http://food.boohee.com/fb/v1/foods?kind=group&value=1&order_by=1&page=" + page + "&order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_version=5.1&phone_model=M578CA&channel=meizu%20";
+////
+////                            } else if (sortUrl == "http://food.boohee.com/fb/v1/foods?kind=brand&value=20&order_by=1&page=1&order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_version=5.1&phone_model=M578CA&channel=meizu%20") {
+////                                url = "http://food.boohee.com/fb/v1/foods?kind=brand&value=1&order_by=1&page=" + page + "&order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_version=5.1&phone_model=M578CA&channel=meizu%20";
+////
+////                            } else if (sortUrl == "http://food.boohee.com/fb/v1/foods?kind=restaurant&value=1&order_by=1&page=1&order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_version=5.1&phone_model=M578CA&channel=meizu%20") {
+////                                url = "http://food.boohee.com/fb/v1/foods?kind=restaurant&value=1&order_by=1&page=" + page + "&order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_version=5.1&phone_model=M578CA&channel=meizu%20";
+////
+////                            }
+//                            NetTool.getInstance().startRequest(sortUrl, FoodWiKiBrandBean.class, new CallBack<FoodWiKiBrandBean>() {
+//                                @Override
+//                                public void onSuccess(FoodWiKiBrandBean response) {
+//                                    foodsBeen.addAll(response.getFoods());
+//                                    adapter.setFoodsBeanList(foodsBeen);
+//                                }
 //
-//                            if (sortUrl == "http://food.boohee.com/fb/v1/foods?kind=group&value=1&order_by=1&page=1&" +
-//                                    "order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_versio" +
-//                                    "n=5.1&phone_model=M578CA&channel=meizu%20") {
-//                                url = "http://food.boohee.com/fb/v1/foods?kind=group&value=1&order_by=1&page=" + page + "&" +
-//                                        "order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_versio" +
-//                                        "n=5.1&phone_model=M578CA&channel=meizu%20";
+//                                @Override
+//                                public void onError(Throwable e) {
 //
-//                            } else if (sortUrl == "http://food.boohee.com/fb/v1/foods?kind=" +
-//                                    "brand&value=20&order_by=1&page=1&" +
-//                                    "order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_versio" +
-//                                    "n=5.1&phone_model=M578CA&channel=meizu%20") {
-//                                url = "http://food.boohee.com/fb/v1/foods?kind=" +
-//                                        "brand&value=1&order_by=1&page=" + page + "&" +
-//                                        "order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_versio" +
-//                                        "n=5.1&phone_model=M578CA&channel=meizu%20";
-//
-//                            } else if (sortUrl == "http://food.boohee.com/fb/v1/foods?kind=" +
-//                                    "restaurant&value=1&order_by=1&page=1&" +
-//                                    "order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_versio" +
-//                                    "n=5.1&phone_model=M578CA&channel=meizu%20") {
-//                                url = "http://food.boohee.com/fb/v1/foods?kind=" +
-//                                        "restaurant&value=1&order_by=1&page=" + page + "&" +
-//                                        "order_asc=0&token=&user_key=&app_version=2.6&app_device=Android&os_versio" +
-//                                        "n=5.1&phone_model=M578CA&channel=meizu%20";
-//
-//                            }
-                            NetTool.getInstance().startRequest(sortUrl, FoodWiKiBrandBean.class, new CallBack<FoodWiKiBrandBean>() {
-                                @Override
-                                public void onSuccess(FoodWiKiBrandBean response) {
-                                    foodsBeen.addAll(response.getFoods());
-                                    adapter.setFoodsBeanList(foodsBeen);
-                                }
-
-                                @Override
-                                public void onError(Throwable e) {
-
-                                }
-                            });
+//                                }
+//                            });
 
                             listView.onRefreshComplete();
                             Toast.makeText(getBaseContext(), "加载完成", Toast.LENGTH_SHORT).show();
@@ -176,12 +188,21 @@ public class FoodWiKiBrandActivity extends BaseActivity implements View.OnClickL
 
             }
         });
+        popupWindow = new PopupWindow(getLayoutInflater().inflate(R.layout.actvity_popup, null),
+                ActionBar.LayoutParams.WRAP_CONTENT,
+                ActionBar.LayoutParams.WRAP_CONTENT, true);
 
+        popupWindow.setTouchable(true);
+
+        popupWindow.setOutsideTouchable(true);
+
+        popupWindow.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
     }
 
     @Override
     protected void bindEvent() {
         titleTv.setOnClickListener(this);
+        upDownTv.setOnClickListener(this);
     }
 
     @Override
@@ -189,6 +210,9 @@ public class FoodWiKiBrandActivity extends BaseActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.tv_foodwikibrand_title:
                 finish();
+                break;
+            case R.id.tv_activity_updowm:
+                popupWindow.showAsDropDown(v, Gravity.BOTTOM,0,0);
                 break;
         }
     }

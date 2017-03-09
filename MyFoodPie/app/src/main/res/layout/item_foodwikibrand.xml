@@ -1,18 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
 
     <com.lanou.dllo.myfoodpie.custom.Circle
         android:id="@+id/cir_item_food_brand"
-        android:src="@mipmap/ic_launcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:isCircle="true"/>
-    <TextView
-        android:id="@+id/tv_item_food_brand"
+        android:layout_margin="5dp"
+        android:src="@mipmap/ic_launcher"
+        app:isCircle="true" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/cir_item_food_brand"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_item_food_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="adasdas" />
+
+        <LinearLayout
+            android:layout_below="@id/tv_item_food_brand"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_item_food_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+                android:text="adasd" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="千卡/" />
+
+            <TextView
+                android:id="@+id/tv_item_food_hundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_food_brand"
+                android:layout_marginTop="8dp"
+                android:text="adasd" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_food_brand"
+                android:layout_marginTop="8dp"
+                android:text="克" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_item_food_brand"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:src="@mipmap/ic_launcher" />
 </LinearLayout>
